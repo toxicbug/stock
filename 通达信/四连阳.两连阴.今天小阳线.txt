@@ -1,0 +1,4 @@
+R4:=EVERY(C>O,4);
+G2:=EVERY(C<O,2);
+
+REF(R4,3) AND REF(G2,1) AND C>O;

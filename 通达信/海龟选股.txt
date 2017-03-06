@@ -1,0 +1,9 @@
+H20:=REF(HHV(H,N),1);                      {20日最高价的最大值}
+MA60:=MA(C,60);                            {个股60日均线}
+
+T1:=INDEXC>MA(INDEXC,250);                 {大盘现价在250日年线之上}
+T2:=EVERY(C>MA60,M);                       {最近M日个股收盘价都在60日均线之上}
+T3:=CROSS(H,H20);                          {个股价格上穿H20}
+T4:=COUNT(T3,M)=1;                         {且M日内只能有一次}
+
+T1 AND T2 AND T3 AND T4;
